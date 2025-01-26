@@ -1,0 +1,138 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.3.4, pluggy-1.5.0 -- /Users/amitanand/Dev/blogApiFastapi/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/amitanand/Dev/blogApiFastapi
+configfile: pytest.ini
+plugins: cov-6.0.0, anyio-4.8.0
+collecting ... collected 55 items
+
+tests/test_auth.py::test_register_user_success PASSED                    [  1%]
+tests/test_auth.py::test_register_user_duplicate_username PASSED         [  3%]
+tests/test_auth.py::test_login_success PASSED                            [  5%]
+tests/test_auth.py::test_login_invalid_credentials PASSED                [  7%]
+tests/test_auth.py::test_register_invalid_password PASSED                [  9%]
+tests/test_auth.py::test_register_invalid_email PASSED                   [ 10%]
+tests/test_comments.py::test_create_comment_success PASSED               [ 12%]
+tests/test_comments.py::test_update_comment PASSED                       [ 14%]
+tests/test_comments.py::test_delete_comment PASSED                       [ 16%]
+tests/test_database.py::test_get_db PASSED                               [ 18%]
+tests/test_database.py::test_db_session_closes PASSED                    [ 20%]
+tests/test_database.py::test_paginate PASSED                             [ 21%]
+tests/test_init_db.py::test_init_db PASSED                               [ 23%]
+tests/test_likes.py::test_like_post PASSED                               [ 25%]
+tests/test_likes.py::test_like_post_twice PASSED                         [ 27%]
+tests/test_likes.py::test_unlike_post PASSED                             [ 29%]
+tests/test_likes.py::test_unlike_not_liked_post PASSED                   [ 30%]
+tests/test_posts.py::test_create_post_success PASSED                     [ 32%]
+tests/test_posts.py::test_list_posts_pagination PASSED                   [ 34%]
+tests/test_posts.py::test_post_visibility PASSED                         [ 36%]
+tests/test_posts.py::test_update_post PASSED                             [ 38%]
+tests/test_posts.py::test_delete_post PASSED                             [ 40%]
+tests/test_posts.py::test_search_posts PASSED                            [ 41%]
+tests/test_posts.py::test_post_with_like_status PASSED                   [ 43%]
+tests/test_posts.py::test_filter_published_posts_admin PASSED            [ 45%]
+tests/test_posts.py::test_filter_published_posts_public PASSED           [ 47%]
+tests/test_posts.py::test_filter_published_posts_author PASSED           [ 49%]
+tests/test_posts.py::test_create_post_invalid_status PASSED              [ 50%]
+tests/test_posts.py::test_update_post_not_found PASSED                   [ 52%]
+tests/test_posts.py::test_create_post_server_error PASSED                [ 54%]
+tests/test_posts.py::test_update_post_unauthorized PASSED                [ 56%]
+tests/test_posts.py::test_delete_post_unauthorized PASSED                [ 58%]
+tests/test_posts.py::test_update_post_server_error PASSED                [ 60%]
+tests/test_posts.py::test_delete_post_server_error PASSED                [ 61%]
+tests/test_run.py::test_check_environment PASSED                         [ 63%]
+tests/test_run.py::test_create_required_directories PASSED               [ 65%]
+tests/test_run.py::test_create_app PASSED                                [ 67%]
+tests/test_run.py::test_cors_middleware PASSED                           [ 69%]
+tests/test_run.py::test_main_success PASSED                              [ 70%]
+tests/test_run.py::test_main_failure PASSED                              [ 72%]
+tests/test_system.py::test_root_endpoint PASSED                          [ 74%]
+tests/test_system.py::test_health_check PASSED                           [ 76%]
+tests/test_system.py::test_root_endpoint_content PASSED                  [ 78%]
+tests/test_system.py::test_health_check_error_handling PASSED            [ 80%]
+tests/test_tags.py::test_create_tag PASSED                               [ 81%]
+tests/test_tags.py::test_create_duplicate_tag PASSED                     [ 83%]
+tests/test_tags.py::test_list_tags PASSED                                [ 85%]
+tests/test_tags.py::test_get_posts_by_tag PASSED                         [ 87%]
+tests/test_users.py::test_get_current_user PASSED                        [ 89%]
+tests/test_users.py::test_update_user_profile PASSED                     [ 90%]
+tests/test_users.py::test_list_user_posts PASSED                         [ 92%]
+tests/test_users.py::test_list_user_comments PASSED                      [ 94%]
+tests/test_users.py::test_list_user_likes PASSED                         [ 96%]
+tests/test_users.py::test_update_profile_server_error PASSED             [ 98%]
+tests/test_users.py::test_update_profile_duplicate_username PASSED       [100%]
+
+=============================== warnings summary ===============================
+database.py:13
+  /Users/amitanand/Dev/blogApiFastapi/database.py:13: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+.venv/lib/python3.9/site-packages/pydantic/_internal/_config.py:295: 1 warning
+tests/test_auth.py: 10 warnings
+  /Users/amitanand/Dev/blogApiFastapi/.venv/lib/python3.9/site-packages/pydantic/_internal/_config.py:295: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/test_comments.py::test_create_comment_success
+tests/test_comments.py::test_update_comment
+tests/test_comments.py::test_delete_comment
+tests/test_users.py::test_list_user_comments
+  /Users/amitanand/Dev/blogApiFastapi/main.py:457: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    **comment.dict(),
+
+tests/test_comments.py::test_update_comment
+  /Users/amitanand/Dev/blogApiFastapi/main.py:498: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    for field, value in comment_update.dict(exclude_unset=True).items():
+
+tests/test_posts.py::test_update_post
+tests/test_posts.py::test_update_post_server_error
+  /Users/amitanand/Dev/blogApiFastapi/main.py:394: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    update_data = post_update.dict(exclude_unset=True, exclude={'tags'})
+
+tests/test_posts.py::test_post_with_like_status
+  /Users/amitanand/Dev/blogApiFastapi/main.py:704: PydanticDeprecatedSince20: The `from_orm` method is deprecated; set `model_config['from_attributes']=True` and use `model_validate` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    **schemas.Post.from_orm(post).dict(),
+
+tests/test_posts.py::test_post_with_like_status
+  /Users/amitanand/Dev/blogApiFastapi/main.py:704: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    **schemas.Post.from_orm(post).dict(),
+
+tests/test_tags.py::test_create_tag
+tests/test_tags.py::test_create_duplicate_tag
+tests/test_tags.py::test_list_tags
+tests/test_tags.py::test_get_posts_by_tag
+  /Users/amitanand/Dev/blogApiFastapi/main.py:608: PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+    db_tag = models.Tag(**tag.dict())
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+---------- coverage: platform darwin, python 3.9.6-final-0 -----------
+Name                     Stmts   Miss  Cover   Missing
+------------------------------------------------------
+__init__.py                  0      0   100%
+config.py                   19      0   100%
+database.py                 35      9    74%   32-40
+init_db.py                  19      5    74%   14-20, 29-30, 37
+main.py                    411    103    75%   57-62, 80, 83-84, 99-101, 105, 120-122, 160, 165-170, 257-261, 287, 295, 302-305, 310-313, 318, 328-331, 372, 390, 400-407, 426, 430, 453, 465-468, 482, 490, 494, 503-506, 519, 527, 531, 537-540, 553, 568-571, 591-594, 613-616, 633, 640-642, 666, 674, 689, 716-723, 728, 730, 732, 734, 747, 751, 768-771
+models.py                   67      1    99%   35
+run.py                      47      1    98%   94
+run_tests.py                16     16     0%   1-31
+schemas.py                 113      0   100%
+tests/__init__.py            0      0   100%
+tests/conftest.py          110      9    92%   152-160, 195-203
+tests/test_auth.py          35      0   100%
+tests/test_comments.py      21      0   100%
+tests/test_database.py      35      4    89%   25, 37-39
+tests/test_init_db.py       23      0   100%
+tests/test_likes.py         15      0   100%
+tests/test_posts.py        111      3    97%   184, 213, 230
+tests/test_run.py           56      0   100%
+tests/test_system.py        31      0   100%
+tests/test_tags.py          29      0   100%
+tests/test_users.py         52      1    98%   65
+tests/utils.py              21      0   100%
+------------------------------------------------------
+TOTAL                     1266    152    88%
+Coverage HTML written to dir test_reports/coverage_html
+Coverage XML written to file test_reports/coverage.xml
+
+======================= 55 passed, 25 warnings in 31.73s =======================
