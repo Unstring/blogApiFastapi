@@ -1,1 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
 .env
+.venv
+.prod
+env/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Project specific
+*.db
+*.sqlite3
+logs/
+app.log
+test_reports/
+.coverage
+htmlcov/
+coverage.xml
+.pytest_cache/
+test_results_*.txt
+
+# Temp files
+*.tmp
+*.bak
+*.log

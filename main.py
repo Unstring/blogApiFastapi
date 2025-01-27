@@ -179,7 +179,7 @@ async def update_user_profile(
         logger.error(f"Error updating user profile: {e}")
         raise HTTPException(status_code=500, detail="Could not update profile")
 
-@router.get("/me/posts", response_model=schemas.PaginatedResponse[schemas.Post])
+@router.get("/me/posts", response_model=schemas.PaginatedResponse[schemas.Post], tags=["users"])
 async def list_user_posts(
     page: int = Query(1, gt=0),
     limit: int = Query(10, gt=0, le=100),
@@ -350,7 +350,7 @@ async def create_post(
         )
         db.add(db_post)
         db.flush()
-        
+    
         # Handle tags
         for tag_name in post.tags:
             tag = db.query(models.Tag).filter(models.Tag.name == tag_name).first()
@@ -363,8 +363,6 @@ async def create_post(
         db.commit()
         db.refresh(db_post)
         return db_post
-    except HTTPException:
-        raise
     except Exception as e:
         db.rollback()
         logger.error(f"Error creating post: {e}")
@@ -405,7 +403,7 @@ async def update_post(
                     db.add(tag)
                     db.flush()
                 db_post.tags.append(tag)
-
+        
         db.commit()
         db.refresh(db_post)
         return db_post

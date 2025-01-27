@@ -1,0 +1,9 @@
+cat > .env << EOL
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=amitanand_admin
+DB_PASSWORD=Chanaura$$321
+DB_NAME=amitanand_blogapi
+SECRET_KEY=your_secret_key
+API_V1_PREFIX=/api/v1
+EOL
